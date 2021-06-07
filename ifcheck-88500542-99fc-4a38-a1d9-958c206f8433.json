@@ -2,5 +2,5 @@
   "id": "88500542-99fc-4a38-a1d9-958c206f8433",
   "prefix": "ifcheck",
   "description": "",
-  "body": "if exists ( select  *\n            from    sys.check_constraints\n            where   name = 'CK_Name' ) \n\n\talter table dbo.TableName \n\tadd constraint CK_Name \n\tcheck (\n\t  --condition\n\t)\ngo"
+  "body": "if not exists ( select *\n            \tfrom sys.check_constraints\n            \twhere name = 'CK_Name' ) \n\n\talter table dbo.TableName \n\tadd constraint CK_Name \n\tcheck (\n\t  --condition\n\t)\ngo"
 }
