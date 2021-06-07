@@ -1,0 +1,6 @@
+{
+  "id": "bd713647-69ef-4b6e-aa80-19b9e7ab50c4",
+  "prefix": "ipaddress_from_hex",
+  "description": "",
+  "body": "    concat(\n        convert(int, substring(IpAddress, 1, 1)) , '.'\n      , convert(int, substring(IpAddress, 2, 1)) , '.'\n      , convert(int, substring(IpAddress, 3, 1)) , '.'\n      , convert(int, substring(IpAddress, 4, 1))\n    ) as Ip"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "86010af5-e750-4148-a693-6a7a4e25a6bb",
+  "prefix": "iffn",
+  "description": "Check if function exists",
+  "body": "if exists ( select  *\n            from    sys.objects\n            where   object_id = object_id(N'dbo.fnName$CURSOR$')\n                    and type in ( N'FN', N'IF', N'TF', N'FS', N'FT' ) ) \n    \n\tdrop function dbo.fnName\ngo\n"
+}

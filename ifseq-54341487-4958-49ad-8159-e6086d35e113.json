@@ -1,0 +1,6 @@
+{
+  "id": "54341487-4958-49ad-8159-e6086d35e113",
+  "prefix": "ifseq",
+  "description": "",
+  "body": "if not exists ( select\t*\n\t\t\t\tfrom\tsys.sequences s\n\t\t\t\twhere\ts.object_id = object_id('dbo.SequenceName') )\n\t\n\tcreate sequence dbo.SequenceName as int\n\t\tstart with 1\n\t\tincrement by 1;\n\ngo"
+}

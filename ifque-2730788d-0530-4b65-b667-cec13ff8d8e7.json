@@ -1,0 +1,6 @@
+{
+  "id": "2730788d-0530-4b65-b667-cec13ff8d8e7",
+  "prefix": "ifque",
+  "description": "service broker queue",
+  "body": "if not exists ( select  *\n                from    sys.service_queues q\n                        inner join sys.schemas s on q.schema_id = s.schema_id\n                where   s.name = 'dbo'\n                        and q.name = 'NameOfTheQueue' ) \n    begin\n        \n\t\tcreate queue dbo.NameOfTheQueue\n\t\t\t  with status = on \n\t\t\t, retention = off \n\t\t\t, activation (    \n\t\t\t\t  status = on \n\t\t\t\t, procedure_name = dbo.SpName\n\t\t\t\t, max_queue_readers = 1 \n\t\t\t\t, execute as owner  \n\t\t\t  )\n\t\t\t, poison_message_handling (status = on)\n\n\tend\ngo\n"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "fb80edfa-7259-46e0-80a0-109aeba01df9",
+  "prefix": "Numbers2",
+  "description": "",
+  "body": "with n as (select * from (values (0),(1),(2),(3),(4),(5),(6),(7),(8),(9))t(c))\nselect row_number() over ( order by (select null) ) Num\nfrom n cross join n n2 -- 100\n\t   cross join n n3 -- 1000\n\t   cross join n n4 -- 10000\n\t   cross join n n5 -- 100000\n\t   cross join n n6 -- 1000000\n\t   cross join n n7 -- 10000000\n"
+}

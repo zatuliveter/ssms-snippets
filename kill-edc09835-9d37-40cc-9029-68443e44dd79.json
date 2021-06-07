@@ -1,0 +1,6 @@
+{
+  "id": "edc09835-9d37-40cc-9029-68443e44dd79",
+  "prefix": "kill",
+  "description": "",
+  "body": "select concat('kill ', session_id)\nfrom sys.dm_exec_sessions\nwhere is_user_process = 1 and session_id != @@SPID"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "7e6bbd00-eee2-4843-a640-010e3b818450",
+  "prefix": "Numbers",
+  "description": "creates numbers table",
+  "body": "if object_id('dbo.Numbers') is not null drop table dbo.Numbers\ngo\n\ncreate table dbo.Numbers ( \n\tNumber int not null \n  , constraint PK_Numbers primary key (Number) \n)\n\n;with n1(c) as (select 0 union all select 0 ) -- 2 rows\n,n2(c) as (select 0 from n1 cross join n1 t ) -- 4 rows\n,n3(c) as (select 0 from n2 cross join n2 t ) -- 16 rows\n,n4(c) as (select 0 from n3 cross join n3 t ) -- 256 rows\n,n5(c) as (select 0 from n4 cross join n4 t ) -- 65536 rows\ninsert into dbo.Numbers select row_number() over(order by (select null)) from n5\ngo\n"
+}

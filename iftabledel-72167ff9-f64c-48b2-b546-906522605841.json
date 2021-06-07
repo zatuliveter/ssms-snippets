@@ -1,0 +1,6 @@
+{
+  "id": "72167ff9-f64c-48b2-b546-906522605841",
+  "prefix": "iftabledel",
+  "description": "",
+  "body": "if object_id('dbo.TableName' ) is not null    \t\t\t\t\n    drop table dbo.TableName\ngo"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "8130397e-1a5a-4058-b6c4-6dc900452f20",
+  "prefix": "ifsp",
+  "description": "",
+  "body": "\nif object_id(N'dbo.ProcName') is null\t\n\texec('create proc dbo.ProcName as return;')\ngo\n\ngrant exec on dbo.ProcName to UserOrRole;\ngo\n\nalter proc dbo.ProcName\nas\n\t\ngo"
+}

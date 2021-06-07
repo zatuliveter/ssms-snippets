@@ -1,0 +1,16 @@
+{
+  "id": "02cc4cc7-4eaa-4177-8298-fe0a6046067b",
+  "prefix": "curff",
+  "description": "Fast-forward read-only cursor",
+  "body": "/* declare variables */\nDECLARE @variable INT\n\nDECLARE $cursor_name$ CURSOR FAST_FORWARD READ_ONLY FOR $select_statement$\n\nOPEN $cursor_name$\n\nFETCH NEXT FROM $cursor_name$ INTO @variable\n\nWHILE @@FETCH_STATUS = 0\nBEGIN\n    $CURSOR$\n\n    FETCH NEXT FROM $cursor_name$ INTO @variable\nEND\n\nCLOSE $cursor_name$\nDEALLOCATE $cursor_name$",
+  "placeholders": [
+    {
+      "name": "cursor_name",
+      "defaultValue": ""
+    },
+    {
+      "name": "select_statement",
+      "defaultValue": ""
+    }
+  ]
+}

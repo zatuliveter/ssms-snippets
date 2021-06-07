@@ -1,0 +1,6 @@
+{
+  "id": "7dd1bd4a-befa-4303-9f99-a89d89bcf3ea",
+  "prefix": "ifviewdel",
+  "description": "",
+  "body": "drop view if exists dbo.ViewName\ngo\n"
+}

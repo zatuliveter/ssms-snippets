@@ -1,0 +1,6 @@
+{
+  "id": "2cb210f7-71a1-4cd2-90cb-122faf01d254",
+  "prefix": "cabCompanyByCompanyProcessing",
+  "description": "",
+  "body": "\ndeclare @CompanyId int = -999999999\nraiserror ('Process company-by-company.', 0, 0) with nowait;\n\nwhile (1 = 1)\nbegin\n\tselect top 1 @CompanyId = CompanyId\n\tfrom cab.Companies\n\twhere CompanyId > @CompanyId \n\torder by CompanyId\n\t\n\tif @@rowcount = 0 break;\n\n\traiserror ('CompanyId=%d', 0, 0, @CompanyId) with nowait;\n\n\t-- do\n\t--update table\n\t--where CompanyId = @CompanyId\nend\nraiserror ('Completed.', 0, 0) with nowait;\ngo"
+}

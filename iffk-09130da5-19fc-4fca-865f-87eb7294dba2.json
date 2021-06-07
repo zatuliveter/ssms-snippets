@@ -1,0 +1,6 @@
+{
+  "id": "09130da5-19fc-4fca-865f-87eb7294dba2",
+  "prefix": "iffk",
+  "description": "",
+  "body": "\nif not exists ( select  *\n\t\t\t\tfrom    sys.foreign_keys\n\t\t\t\twhere   name = N'FK_Name'\n\t\t\t\t\t\tand parent_object_id = object_id(N'dbo.TblName') ) \n    \n\talter table dbo.TblName\n\tadd constraint FK_Name\n\t\tforeign key ( keyId )\n\t\treferences dbo.table ( keyId )\ngo"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "7b9ac57f-be90-4747-a01e-289762d1503b",
+  "prefix": "ifservice",
+  "description": "servie broker service",
+  "body": "if not exists ( select  *\n                from    sys.services\n                where   name = 'NameOfTheTargetService' ) \n    begin\n        create service [NameOfTheTargetService]  \n        on queue [gps].[NameOfTheTargetQueue] \n          ([http://www.actsoft.com/NameOfTheContract])\n    end\ngo\n "
+}

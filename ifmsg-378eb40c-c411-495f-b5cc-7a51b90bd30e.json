@@ -1,0 +1,6 @@
+{
+  "id": "378eb40c-c411-495f-b5cc-7a51b90bd30e",
+  "prefix": "ifmsg",
+  "description": "service broker message",
+  "body": "if not exists ( select  *\n                from    sys.service_message_types\n                where   name = 'http://www.actsoft.com/NotifyAlertMsg' ) \n    begin\n        create message type [http://www.actsoft.com/NotifyAlertMsg]\n        validation = well_formed_xml -- EMPTY, NONE, VALID_XML WITH SCHEMA COLLECTION schema_collection_name\n    end \ngo"
+}

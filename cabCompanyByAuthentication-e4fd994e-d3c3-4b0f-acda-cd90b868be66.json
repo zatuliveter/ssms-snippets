@@ -1,0 +1,6 @@
+{
+  "id": "e4fd994e-d3c3-4b0f-acda-cd90b868be66",
+  "prefix": "cabCompanyByAuthentication",
+  "description": "",
+  "body": "select u.CompanyId, *\nfrom cab.Authentications a \n\tjoin cab.Users u on u.UserId = a.UserId\nwhere a.AuthenticationId = 'repsvc1'"
+}

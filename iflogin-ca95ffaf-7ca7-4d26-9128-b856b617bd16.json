@@ -1,0 +1,6 @@
+{
+  "id": "ca95ffaf-7ca7-4d26-9128-b856b617bd16",
+  "prefix": "iflogin",
+  "description": "",
+  "body": "if not exists ( select *\n\t\t\t\tfrom sys.sql_logins\n\t\t\t\twhere name = 'LoginName' )\n\tcreate login LoginName with password = '123123', check_policy = off;\ngo"
+}

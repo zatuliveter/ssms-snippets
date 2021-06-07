@@ -1,0 +1,6 @@
+{
+  "id": "4ce246de-b985-45c3-aafe-d435c6ba402f",
+  "prefix": "iftmp",
+  "description": "checks if tmp table is exists",
+  "body": "\nif object_id('tempdb..#tmp') is not null \n    begin\n        drop table #tmp\n    end\ngo\n\ncreate table #tmp ( CompanyId int, UserId int, RecId bigint )"
+}

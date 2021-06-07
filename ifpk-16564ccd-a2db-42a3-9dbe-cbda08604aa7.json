@@ -1,0 +1,6 @@
+{
+  "id": "16564ccd-a2db-42a3-9dbe-cbda08604aa7",
+  "prefix": "ifpk",
+  "description": "check if primary key is exists",
+  "body": "if exists ( select  *\n            from    sys.indexes\n            where   object_id = object_id(N'dbo.TblName$CURSOR$')\n                    and name = N'PK_Name' ) \n\tbegin\n\t\talter table dbo.TblName drop constraint PK_Name\n\tend\ngo\n\n"
+}

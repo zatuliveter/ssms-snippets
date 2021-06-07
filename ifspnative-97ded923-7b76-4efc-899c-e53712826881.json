@@ -1,0 +1,6 @@
+{
+  "id": "97ded923-7b76-4efc-899c-e53712826881",
+  "prefix": "ifspnative",
+  "description": "",
+  "body": "if object_id(N'dbo.ProcNativeName') is null\t\n\texec('create proc dbo.ProcNativeName with native_compilation, schemabinding as')\ngo\n\ngrant exec on dbo.ProcNativeName to UserOrRole;\ngo\n\nalter procedure dbo.ProcNativeName\nwith native_compilation, schemabinding\nas\nbegin atomic with ( transaction isolation level = snapshot, language = N'English' )\n    \n\t\nend\ngo"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "9c43b071-563b-480c-90e7-0c90005e6af1",
+  "prefix": "ifrole",
+  "description": "",
+  "body": "if not exists ( select *\n\t\t\t\tfrom sys.database_principals\n\t\t\t\twhere type_desc = 'DATABASE_ROLE'\n\t\t\t\t\tand name = 'RoleName'\n\t\t\t  )\n\tcreate role RoleName;\ngo"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "21b7e662-32e8-4800-8d01-dff46d4091b2",
+  "prefix": "cabCopyDatabases",
+  "description": "",
+  "body": "\ncreate database CabCentralProd as copy of cabatt.CabCentral ( service_objective = 'S0' );\ncreate database CabClient1Prod as copy of cabatt.CabClient1 ( service_objective = 'S0' );\ngo\n"
+}

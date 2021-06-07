@@ -1,0 +1,6 @@
+{
+  "id": "24839ed7-bcea-4672-9ff6-c8a845d3358f",
+  "prefix": "ifps",
+  "description": "",
+  "body": "if not exists ( select *\n\t\t\t\tfrom sys.partition_functions\n\t\t\t\twhere name = 'pfName' )\n\nbegin \n\tdeclare @Today date = getutcdate();\n\tdeclare @FirstDate date = dateadd(dd, 1, eomonth(@Today, -1)); -- first day of the month\n\tdeclare @LastDate date = dateadd(month, 6, @FirstDate);\n\n\tcreate partition function pfName ( datetime2(2) )\n\tas range right for values ( @FirstDate );\n\n\twhile ( @FirstDate < @LastDate )\n\tbegin\n\t\tset @FirstDate = dateadd(month, 1, @FirstDate)\n\t\talter partition function pfName() split range (@FirstDate);\t\t\n\tend\t\nend\n\n\nif not exists ( select\t*\n\t\t\t\tfrom\tsys.partition_schemes\n\t\t\t\twhere\tname = 'psName' )\n\n\tcreate partition scheme psName \n\tas partition pfName all to ( TranData );\n\ngo"
+}

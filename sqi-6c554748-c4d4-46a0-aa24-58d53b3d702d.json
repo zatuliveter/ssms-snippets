@@ -1,0 +1,6 @@
+{
+  "id": "6c554748-c4d4-46a0-aa24-58d53b3d702d",
+  "prefix": "sqi",
+  "description": "Change the current QUOTED_IDENTIFIER setting",
+  "body": "SET QUOTED_IDENTIFIER ON"
+}

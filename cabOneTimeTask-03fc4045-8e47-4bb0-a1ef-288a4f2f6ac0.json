@@ -1,0 +1,6 @@
+{
+  "id": "03fc4045-8e47-4bb0-a1ef-288a4f2f6ac0",
+  "prefix": "cabOneTimeTask",
+  "description": "",
+  "body": "\n-- this script will be executed only once per database\ndeclare @OneTimeTaskId uniqueidentifier = '$GUID$' --select newid()\ndeclare @OneTimeTaskName varchar(255) = 'description'\n\nif not exists ( select *\n\t\t\t\tfrom Internal.OneTimeTasks\n\t\t\t\twhere OneTimeTaskId = @OneTimeTaskId )\nbegin \nset xact_abort on\nbegin tran\n\traiserror (@OneTimeTaskName, 0, 0) with nowait;\n\t\n\t--do you work here\n\t\n\tinsert into Internal.OneTimeTasks ( OneTimeTaskId, TaksName, CreatedDate )\n\tvalues ( @OneTimeTaskId, @OneTimeTaskName, sysutcdatetime() )\ncommit\nend\ngo"
+}

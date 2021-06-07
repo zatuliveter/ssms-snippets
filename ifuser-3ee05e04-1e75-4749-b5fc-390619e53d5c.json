@@ -1,0 +1,6 @@
+{
+  "id": "3ee05e04-1e75-4749-b5fc-390619e53d5c",
+  "prefix": "ifuser",
+  "description": "",
+  "body": "if not exists ( select *\n\t\t\t\tfrom sys.database_principals\n\t\t\t\twhere type_desc = 'SQL_USER'\n\t\t\t\t\tand name = 'UserName' )\n\tcreate user UserName for login LoginName;\ngo"
+}

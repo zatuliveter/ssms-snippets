@@ -1,0 +1,6 @@
+{
+  "id": "14df4a4d-96ea-4ef2-9970-a5f45df7fe86",
+  "prefix": "ifdef",
+  "description": "Check if default exists",
+  "body": "if not exists ( select  *\n\t\t\t\tfrom    sys.default_constraints\n\t\t\t\twhere   name = N'DEF_Name' ) \n    \n\talter table dbo.TableName \n\tadd constraint DEF_Name default DevaultValue for ColumnName\ngo\n\n"
+}

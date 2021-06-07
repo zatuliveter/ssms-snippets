@@ -1,0 +1,6 @@
+{
+  "id": "906e8492-c763-4a1a-8844-21f243cf1d6c",
+  "prefix": "iftvpdependency",
+  "description": "",
+  "body": "declare @Sql nvarchar(max)\nwhile(1=1)\nbegin\n\tselect @Sql = concat('alter proc ', s.name, '.', o.name, ' as return;')\n\tfrom sys.parameters p\n\t\tjoin sys.objects o on o.object_id = p.object_id\n\t\tjoin sys.schemas s on s.schema_id = o.schema_id \n\twhere p.user_type_id = type_id('dbo.tvpName')\n\t\n\tif @@ROWCOUNT = 0 break;\n\n\t--print @Sql\n\texec(@Sql);\nend"
+}

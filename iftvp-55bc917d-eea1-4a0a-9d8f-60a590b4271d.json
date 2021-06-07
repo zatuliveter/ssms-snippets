@@ -1,0 +1,6 @@
+{
+  "id": "55bc917d-eea1-4a0a-9d8f-60a590b4271d",
+  "prefix": "iftvp",
+  "description": "",
+  "body": "if type_id('dbo.tvpName') is not null\t\n\tdrop type dbo.tvpName\ngo\n\ncreate type dbo.tvpName as table (\n\tId int not null\n  , Data varchar(128) null\n  , primary key clustered ( Id )\n)\ngo\n\ngrant exec on type::dbo.tvpName to databaseRole;\ngo"
+}

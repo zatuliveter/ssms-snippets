@@ -1,0 +1,6 @@
+{
+  "id": "220e6d85-99b5-4c8f-8edf-a3cc0aa0ce40",
+  "prefix": "ifcheckdel",
+  "description": "if check constraint exists",
+  "body": "\nif exists ( select  *\n            from    sys.check_constraints\n            where   name = 'CK_Name' ) \n    begin\n        alter table dbo.TableName\n        drop constraint CK_Name\n    end\n\nalter table dbo.TableName \nadd constraint CK_Name \ncheck (\n  --condition\n)\ngo"
+}

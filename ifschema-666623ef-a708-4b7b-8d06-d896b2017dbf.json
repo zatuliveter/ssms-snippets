@@ -1,0 +1,6 @@
+{
+  "id": "666623ef-a708-4b7b-8d06-d896b2017dbf",
+  "prefix": "ifschema",
+  "description": "if schema",
+  "body": "if not exists ( select  *\n                from    sys.schemas \n                where   name = 'SchemaName' ) \n    begin\n\t\texec ( ' create schema SchemaName ' );\t\t    \n    end\ngo"
+}

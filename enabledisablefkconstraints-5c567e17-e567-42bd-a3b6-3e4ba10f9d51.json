@@ -1,0 +1,6 @@
+{
+  "id": "5c567e17-e567-42bd-a3b6-3e4ba10f9d51",
+  "prefix": "enabledisablefkconstraints",
+  "description": "enable/disable fk constraints for all tables in the database",
+  "body": "-- disable all constraints\nselect concat('alter table ', s.name, '.', t.name, ' nocheck constraint all')\nfrom sys.tables t\n\tjoin sys.schemas s on s.schema_id = t.schema_id\n\t\n-- enable all constraints\nselect concat('alter table ', s.name, '.', t.name, ' with check check constraint all')\nfrom sys.tables t\n\tjoin sys.schemas s on s.schema_id = t.schema_id\n"
+}

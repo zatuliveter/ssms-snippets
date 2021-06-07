@@ -1,0 +1,6 @@
+{
+  "id": "eec0d5cb-e26a-45eb-897c-30ee70f0fa19",
+  "prefix": "iftable",
+  "description": "",
+  "body": "\nif object_id('dbo.TableName') is null\n    \t\t\t\t\n    create table dbo.TableName (\n\t\tId int identity(1, 1),\n\t\tName varchar(128)\n\t)\ngo"
+}

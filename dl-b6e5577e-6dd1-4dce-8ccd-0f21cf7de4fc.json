@@ -1,0 +1,6 @@
+{
+  "id": "b6e5577e-6dd1-4dce-8ccd-0f21cf7de4fc",
+  "prefix": "dl",
+  "description": "Drop login",
+  "body": "DROP LOGIN "
+}

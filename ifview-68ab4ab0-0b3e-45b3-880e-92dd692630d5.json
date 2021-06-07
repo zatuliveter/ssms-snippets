@@ -1,0 +1,6 @@
+{
+  "id": "68ab4ab0-0b3e-45b3-880e-92dd692630d5",
+  "prefix": "ifview",
+  "description": "if view exists create/alter",
+  "body": "if object_id('dbo.ViewName') is null\n    exec (' create view dbo.ViewName as select 1 col; ' );\ngo\n\nalter view dbo.ViewName\nas\n\tselect 1 as col\ngo\n"
+}

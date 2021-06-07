@@ -1,0 +1,6 @@
+{
+  "id": "c9e1accf-90d3-4dfa-985e-1ac7a3b1d19c",
+  "prefix": "sqlvariantproperty",
+  "description": "",
+  "body": "\n\t  , sql_variant_property(Value, 'BaseType') as BaseType\n\t  , sql_variant_property(Value, 'Precision') as Precision\n\t  , sql_variant_property(Value, 'Scale') as Scale"
+}

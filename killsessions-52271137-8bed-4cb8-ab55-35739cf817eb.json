@@ -1,0 +1,6 @@
+{
+  "id": "52271137-8bed-4cb8-ab55-35739cf817eb",
+  "prefix": "killsessions",
+  "description": "",
+  "body": "use master\ngo\n\n-- switch result to text\nset nocount on;\n\nselect concat('kill ', session_id, '\ngo')\nfrom sys.dm_exec_sessions"
+}

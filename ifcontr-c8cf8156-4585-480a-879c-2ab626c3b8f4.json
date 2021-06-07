@@ -1,0 +1,6 @@
+{
+  "id": "c8cf8156-4585-480a-879c-2ab626c3b8f4",
+  "prefix": "ifcontr",
+  "description": "Service broker contrackt",
+  "body": "if not exists ( select *\n\t\t\t\tfrom sys.service_contracts\n\t\t\t\twhere name = 'http://www.actsoft.com/NotifyAlertContract'\n\t\t\t   )\n\tbegin\n\t\tCREATE CONTRACT \n\t\t   [http://www.actsoft.com/NotifyAlertContract] \n\t\t      ( [http://www.actsoft.com/NotifyAlertMsg] SENT BY initiator /* target, any */ )\n\tend\n go\n\n"
+}

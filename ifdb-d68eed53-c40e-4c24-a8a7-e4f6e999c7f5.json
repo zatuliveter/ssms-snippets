@@ -1,0 +1,6 @@
+{
+  "id": "d68eed53-c40e-4c24-a8a7-e4f6e999c7f5",
+  "prefix": "ifdb",
+  "description": "",
+  "body": "use master;\ngo\nif exists ( select  *\n            from    sys.databases db\n            where   db.name = 'DbName' ) \n    begin\n\t\talter database DbName set single_user with rollback immediate;\n        drop database DbName\n    end\ngo\ncreate database DbName;\ngo\nuse DbName;\ngo\n"
+}
