@@ -1,0 +1,6 @@
+{
+  "id": "3f69ca51-2cac-4f19-87dd-fd7c65a6a71c",
+  "prefix": "columns",
+  "description": "list of column in databases",
+  "body": "select o.type as ObjectType\r\n\t , o.type_desc as ObjectTypeName\r\n\t , concat(s.name, '.', o.name) as ObjectName\r\n\t , c.name as ColumnName\r\nfrom sys.columns c\r\n\tjoin sys.objects o on o.object_id = c.object_id\r\n\tjoin sys.schemas s on s.schema_id = o.schema_id\r\nwhere o.is_ms_shipped = 0\r\n  and o.type = 'U'\r\n  and c.name like '%email%'\r\norder by ObjectType, ObjectName\r\n"
+}
