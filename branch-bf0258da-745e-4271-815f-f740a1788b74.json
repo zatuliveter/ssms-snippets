@@ -2,5 +2,5 @@
   "id": "bf0258da-745e-4271-815f-f740a1788b74",
   "prefix": "branch",
   "description": "v3",
-  "body": "\ndeclare @Str nvarchar(max) = N'$PASTE$'\nselect substring(lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(@Str, \n\t\t'User Story ', 'feature/'), \n\t\t'Feature ', 'feature/'), \n\t\t'Task ', 'feature/'), \n\t\t'Bug ', 'bugfix/'), \n\t\t' ', '-'), \n\t\t'.', '-'), \n\t\t'[', ''), \n\t\t']', ''), \n\t\t'&', ''), \n\t\t':', '-'), \n\t\t';', '-'), \n\t\t'(', '-'), \n\t\t')', '-'), \n\t\t'>', '-'), \n\t\t'.', ''), \n\t\t'---', '-'), \n\t\t'--', '-'), \n\t\t'\"', '')\n\t   ), 1, 100)"
+  "body": "\ndeclare @Str nvarchar(max) = N'$PASTE$'\nselect substring(lower(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(@Str, \n\t\t'/', '-'),\n        'User Story ', 'feature/'), \n\t\t'Feature ', 'feature/'), \n\t\t'Task ', 'feature/'), \n\t\t'Bug ', 'bugfix/'), \n\t\t' ', '-'), \n\t\t'.', '-'), \n\t\t'[', ''), \n\t\t']', ''), \n\t\t'&', ''),  \n\t\t':', '-'), \n\t\t';', '-'), \n\t\t'(', '-'), \n\t\t')', '-'), \n\t\t'>', '-'), \n\t\t'.', ''), \n\t\t'---', '-'), \n\t\t'--', '-'), \n\t\t'\"', '')\n\t   ), 1, 100)"
 }

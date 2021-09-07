@@ -1,0 +1,6 @@
+{
+  "id": "b363a312-bdb8-42bf-bbe1-fc85e4c40a0d",
+  "prefix": "copyDatabaseAzurePool",
+  "description": "",
+  "body": "create database [NewDbName] \r\n    as copy of [serverName].[DbName] \r\n    ( service_objective  = elastic_pool(name = [poolName]) )\r\ngo\r\n"
+}
