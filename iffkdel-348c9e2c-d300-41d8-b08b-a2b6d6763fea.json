@@ -2,5 +2,5 @@
   "id": "348c9e2c-d300-41d8-b08b-a2b6d6763fea",
   "prefix": "iffkdel",
   "description": "check if fk exists",
-  "body": "if exists ( select  *\n            from    sys.foreign_keys\n            where   name = N'FK_Name$CURSOR$'\n                    and parent_object_id = object_id(N'dbo.TblName') ) \n    begin\n\t\talter table dbo.TblName\n\t\tdrop constraint FK_Name\n\tend\ngo\n"
+  "body": "if exists ( select  *\n            from    sys.foreign_keys\n            where   name = 'FK_Name$CURSOR$'\n                    and parent_object_id = object_id('dbo.TblName') ) \n    begin\n\t\talter table dbo.TblName\n\t\tdrop constraint FK_Name\n\tend\ngo\n"
 }

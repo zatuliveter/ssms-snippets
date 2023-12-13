@@ -2,5 +2,5 @@
   "id": "d8053abc-1aa0-4f40-86a0-3077103e48be",
   "prefix": "ifidx",
   "description": "check if index exists",
-  "body": "if not exists ( select  *\n\t\t\t\tfrom    sys.indexes\n\t\t\t\twhere   object_id = object_id(N'dbo.TblName')\n\t\t\t\t\t\tand name = N'IDX_Name' ) \n\t\n\tcreate index IDX_Name \n\ton dbo.TbleName\n\t\t( Column1, Column2 )\ngo"
+  "body": "if not exists ( select  *\n\t\t\t\tfrom    sys.indexes\n\t\t\t\twhere   object_id = object_id('dbo.TblName')\n\t\t\t\t\t\tand name = 'IDX_Name' ) \n\t\n\tcreate index IDX_Name \n\ton dbo.TbleName\n\t\t( Column1, Column2 )\ngo"
 }

@@ -2,5 +2,5 @@
   "id": "74c2d018-a7c6-4af2-bbe5-b0b980b2b4a3",
   "prefix": "ifspdel",
   "description": "Check if sp exists",
-  "body": "if object_id(N'dbo.SpName') is not null\t\n\tdrop proc dbo.SpName\ngo"
+  "body": "if object_id('dbo.SpName') is not null\t\n\tdrop proc dbo.SpName\ngo"
 }
