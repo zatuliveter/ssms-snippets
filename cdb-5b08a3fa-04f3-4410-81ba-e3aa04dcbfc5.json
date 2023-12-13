@@ -1,0 +1,12 @@
+{
+  "id": "5b08a3fa-04f3-4410-81ba-e3aa04dcbfc5",
+  "prefix": "cdb",
+  "description": "Create database",
+  "body": "CREATE DATABASE $database_name$\r\nON\r\nPRIMARY ( -- or use FILEGROUP filegroup_name\r\n  NAME = $database_name$_data,\r\n  FILENAME = '$database_name$.mdf'\r\n) --, and repeat as required\r\nLOG ON\r\n(\r\n  NAME = $database_name$_log,\r\n  FILENAME = '$database_name$.ldf'\r\n) --, and repeat as required\r\n--COLLATE collation_name\r\n--WITH\r\n--  DB_CHAINING ON/OFF\r\n--  TRUSTWORTHY ON/OFF\r\n--FOR LOAD\r\n--FOR ATTACH\r\n--WITH\r\n--  ENABLE_BROKER\r\n--  NEW_BROKER\r\n--  ERROR_BROKER_CONVERSATIONS\r\n--FOR ATTACH_REBUILD_LOG\r\nGO\r\n",
+  "placeholders": [
+    {
+      "name": "database_name",
+      "defaultValue": ""
+    }
+  ]
+}

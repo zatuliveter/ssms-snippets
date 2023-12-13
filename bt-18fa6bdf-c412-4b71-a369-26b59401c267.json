@@ -1,0 +1,6 @@
+{
+  "id": "18fa6bdf-c412-4b71-a369-26b59401c267",
+  "prefix": "bt",
+  "description": "Begin transaction",
+  "body": "BEGIN TRANSACTION "
+}

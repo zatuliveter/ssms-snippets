@@ -1,0 +1,6 @@
+{
+  "id": "43d2f382-566c-4f03-8147-78195d0d7387",
+  "prefix": "eata",
+  "description": "Add column (enhanced edition)",
+  "body": "/**\r\nCopyright (c) Red Gate Software Ltd 2018\r\nAll rights Reserved. Use of this code is subject to the terms of a license agreement with Red Gate Software Limited.\r\n\r\nFor more info, see https://www.red-gate.com/hub/product-learning/sql-prompt/customizing-sql-prompt-built-snippets-better-ata-snippet\r\n**/\r\n\r\nUSE <database, sysname, $DBNAME$>\r\nGO\r\n \r\n-- Add a new column to the table\r\nALTER TABLE <Name of the Schema, sysname, dbo>.<Table name, sysname, $SELECTEDTEXT$>\r\n    ADD <Name of the new column, sysname, MyColumn> <datatype of this column,, datetime> <NULL or NOT NULL (allow nulls?),, NULL> -- <What is this column for?, sysname, unknown>\r\nGO\r\nEXEC sys.sp_addextendedproperty \r\n@name = N'MS_Description', \r\n@value = N'<What is this column for?, sysname, unknown>', \r\n@level0type = N'SCHEMA', @level0name = <Name of the Schema, sysname, dbo>, \r\n@level1type = N'TABLE',  @level1name = <Table name, sysname, $SELECTEDTEXT$>,\r\n@level2type = N'COLUMN', @level2name = <Name of the new column, sysname, MyColumn>;"
+}
